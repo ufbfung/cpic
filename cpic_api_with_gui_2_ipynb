@@ -1,0 +1,58 @@
+import requests
+import dash
+from dash import dcc
+from dash import html
+from dash.dependencies import Input, Output
+
+# Set up the API endpoint
+api_url = "https://api.cpicpgx.org/v1"
+
+# Retrieve the list of drugs from the API
+drug_list = requests.get(f'{api_url}/drug?select=name').json()
+drug_options = [{'label': drug['name'], 'value': drug['name']} for drug in drug_list]
+
+# Set up the app
+app = dash.Dash(__name__)
+
+# Define the app layout
+app.layout = html.Div([
+    html.H1("CPIC API Recommendations"),
+
+    # Drug selection dropdown
+    html.Label("Select a drug:"),
+    dcc.Dropdown(
+        id='drug-dropdown',
+        options=drug_options,
+        value=None
+    ),
+
+    # Output for the recommendations
+    html.Br(),
+    html.Div(id='output')
+])
+
+# Define the callback function to retrieve and display the recommendations
+@app.callback(
+    Output(component_id='output', component_property='children'),
+    [Input(component_id='drug-dropdown', component_property='value')]
+)
+def display_recommendations(drug):
+    # Return a message if no drug has been selected
+    if drug is None:
+        return "Please select a drug."
+
+    # Retrieve the recommendations from the API
+    lookup_key = 'cs.{"CYP2C19": "Ultrarapid Metabolizer"}'
+    response = requests.get(f'{api_url}/recommendation?select=drug(name), guideline(name), * &drug.name=eq.{drug}&lookupkey={lookup_key}').json()
+
+    # Process the recommendations into a readable format
+    output_str = f'Recommendations for {drug}:\n\n'
+    for r in response:
+        output_str += f"Guideline: {r['guideline']['name']}\n"
+        output_str += f"Recommendation: {r['recommendation']}\n\n"
+
+    return html.Pre(output_str)
+
+# Run the app
+if __name__ == '__main__':
+    app.run_server(debug=True)

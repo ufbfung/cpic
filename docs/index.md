@@ -5,6 +5,13 @@ Pharmacogenetics (PGx) represents one of the fundamental steps towards personali
 
 We implemented a minimal viable product (MVP) that leverages the CPIC's API to retrieve the most recent drug-gene guidelines based on input of a drug and genetic phenotype. If the latter is unknown, clinicians can enter the ethnicty of the patient and the most likely genetic phenotype will be displayed in order of probability.
 
+### Team
+[Asrar Mahib Alkrizy](https://profiles.stanford.edu/asrar-alkrizy)
+[Sergey Pavlov](https://profiles.stanford.edu/sergey-pavlov)
+[Cheyenne Ali Sadeghi](https://profiles.stanford.edu/cheyenne-sadeghi)
+[Jordan Matthew Howdges](https://profiles.stanford.edu/jordan-hodges)
+[Brian K Fung](https://profiles.stanford.edu/304676)
+
 ### Key features
 - Phenotype lookup by gene (for when clinicians forget what phenotypes are available for a particular gene)
 - Phenotype lookup by ethnicity (when genetic results aren't available). Will retrieve probabilities for all phenotypes sorted by the most likely on the top and return the guideline that matches the drug entered

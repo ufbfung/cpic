@@ -18,7 +18,7 @@ We implemented a minimal viable product (MVP) that leverages the CPIC's API to r
 - CPIC recommendation lookup by drug & genetic phenotype. 
 
 ### Video demonstration
-<iframe width="560" height="315" src="https://www.youtube.com/embed/G_gVXigZmr0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uCRhXl_mOdE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ### Evaluation Survey
 <iframe width="640px" height="480px" src="https://forms.office.com/Pages/ResponsePage.aspx?id=y3NlOXjzaEubyBV1XAxR8_rXTiNBFIBOqTK5xM1GSdZUN1NMWE1JNkg0QzBCWFpBNDRWTTdOTDJKNC4u&embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>

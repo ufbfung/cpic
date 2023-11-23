@@ -1,6 +1,9 @@
 # cpic
 This repo is used for building out a clinical decision support tool that leverages CPIC's API to retrieve pharmacogenetic guidelines based on a patient's drug and gene pair. 
 
+# Website
+To learn more about our project and see a demo, please visit the [deployed website for this repo](https://ufbfung.github.io/cpic/)
+
 # [CPIC API Overview](https://github.com/cpicpgx/cpic-data/wiki)
 This is a great resource for the CPIC API. 
 
